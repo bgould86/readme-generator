@@ -5,27 +5,17 @@ const markdownMaker = require("./markdownMaker");
 inquirer
   .prompt([
     {
-      name: "bioName",
+      name: "title",
       type: "input",
-      message: "Enter your name.",
+      message: "Enter the title of your project.",
     },
     {
-      name: "website",
+      name: "description",
       type: "input",
-      message: "Enter your website.",
-      default: "https://www.hojo.com",
-      validate: function (input) {
-        const valid = input.startsWith("https://www.");
-        return valid || "Please enter a valid website";
-      },
-    },
-    {
-      name: "about",
-      type: "input",
-      message: "Tell us about yourself.",
+      message: "Enter a description for your application.",
     },
   ])
   .then((answers) => {
-    const makeMarkdown = markdownMaker(answers);
-    fs.writeFile("bio.html", makeMarkdown, (err) => (err ? console.error(err) : console.log("Success!")));
+    const readmeText = markdownMaker.markdownMaker(answers);
+    fs.writeFile("generatedREADME.md", readmeText, (err) => (err ? console.error(err) : console.log("Success!")));
   });
