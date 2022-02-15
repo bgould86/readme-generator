@@ -1,0 +1,22 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgould86/readme-generator.git"
+  },
+  "author": "Brett Gould",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/bgould86/readme-generator/issues"
+  },
+  "homepage": "https://github.com/bgould86/readme-generator#readme"
+}
