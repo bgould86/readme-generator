@@ -1,7 +1,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const markdownMaker = require("./markdownMaker");
-//prompt the user for questions sent as an array of objects
+const markdownMaker = require("./utils/markdownMaker");
+//questions array
 inquirer
   .prompt([
     {
@@ -13,6 +13,20 @@ inquirer
       name: "description",
       type: "input",
       message: "Enter a description for your application.",
+    },
+    {
+      name: "screenshot",
+      type: "input",
+      message: "Enter the file path to a screenshot of your application (begin with './').",
+      validate: function (input) {
+        const valid = input.startsWith("./");
+        return valid || "Please enter a valid file path.";
+      },
+    },
+    {
+      name: "screenshotDescription",
+      type: "input",
+      message: "Enter descriptive text for your screenshot.",
     },
     {
       name: "installation",
@@ -61,7 +75,7 @@ inquirer
       message: "Enter the URL for the GitHub repo (include https://www.).",
       validate: function (input) {
         const valid = input.startsWith("https://www.");
-        return valid || "Please enter a valid website";
+        return valid || "Please enter a valid website.";
       },
     },
     {
@@ -70,7 +84,7 @@ inquirer
       message: "Enter the URL for the GitHub pages (include https://www.).",
       validate: function (input) {
         const valid = input.startsWith("https://www.");
-        return valid || "Please enter a valid website";
+        return valid || "Please enter a valid website.";
       },
     },
   ])

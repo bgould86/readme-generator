@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// function for adding license badge
 function renderLicenseBadge(license) {
   if (license === "MIT") {
     return "[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)";
@@ -14,8 +13,7 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// function to create link in table of contents if a license is used
 function renderLicenseLink(license) {
   let licenseLink = "";
   if (license !== "None") {
@@ -24,8 +22,7 @@ function renderLicenseLink(license) {
   return licenseLink;
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// function to create license section if a license is used
 function renderLicenseSection(license) {
   let licenseSection = "";
   if (license !== "None") {
@@ -36,7 +33,7 @@ This project is licnesed by the ${license} license.`;
   return licenseSection;
 }
 
-function markdownMaker({ title, description, installation, usage, license, contribute, tests, contactName, email, github, repoLocation, pagesLocation }) {
+function markdownMaker({ title, description, screenshot, screenshotDescription, installation, usage, license, contribute, tests, contactName, email, github, repoLocation, pagesLocation }) {
   const licenseBadge = renderLicenseBadge(license);
   const licenseLink = renderLicenseLink(license);
   const licenseSection = renderLicenseSection(license);
@@ -49,6 +46,7 @@ ${description}
 
 ## Table of Contents
 
+- [Screenshot](#screenshot)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contribute](#contribute)
@@ -56,6 +54,10 @@ ${description}
 - [Questions](#questions)
 - [Links](#links)
 ${licenseLink}
+
+## Screenshot
+
+![${screenshotDescription}](${screenshot})
 
 ## Installation
 
