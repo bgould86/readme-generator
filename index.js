@@ -43,5 +43,5 @@ inquirer
   ])
   .then((answers) => {
     const readmeText = markdownMaker.markdownMaker(answers);
-    fs.writeFile("generatedREADME.md", readmeText, (err) => (err ? console.error(err) : console.log("Success!")));
+    fs.writeFile("generatedREADME.md", readmeText, (err) => (err ? console.error(err) : console.log("Success! Your README has generated.")));
   });
