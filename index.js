@@ -40,6 +40,39 @@ inquirer
       type: "input",
       message: "Enter instructions for how to test that your application is working properly.",
     },
+    {
+      name: "contactName",
+      type: "input",
+      message: "Enter the name of the person to contact if a user has questions.",
+    },
+    {
+      name: "email",
+      type: "input",
+      message: "Enter an email address for that contact person.",
+    },
+    {
+      name: "github",
+      type: "input",
+      message: "Enter the GitHub username for that contact person.",
+    },
+    {
+      name: "repoLocation",
+      type: "input",
+      message: "Enter the URL for the GitHub repo (include https://www.).",
+      validate: function (input) {
+        const valid = input.startsWith("https://www.");
+        return valid || "Please enter a valid website";
+      },
+    },
+    {
+      name: "pagesLocation",
+      type: "input",
+      message: "Enter the URL for the GitHub pages (include https://www.).",
+      validate: function (input) {
+        const valid = input.startsWith("https://www.");
+        return valid || "Please enter a valid website";
+      },
+    },
   ])
   .then((answers) => {
     const readmeText = markdownMaker.markdownMaker(answers);
