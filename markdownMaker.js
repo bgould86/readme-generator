@@ -16,17 +16,32 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  let licenseLink = "";
+  if (license !== "None") {
+    licenseLink = `- [License](#license)`;
+  }
+  return licenseLink;
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  let licenseSection = "";
+  if (license !== "None") {
+    licenseSection = `## License
+    
+This project is licnesed by the ${license} license.`;
+  }
+  return licenseSection;
+}
 
 function markdownMaker({ title, description, installation, usage, license, contribute, tests }) {
   const badge = renderLicenseBadge(license);
-  return `# ${title} ${badge}
+  const licenseLink = renderLicenseLink(license);
+  const licenseSection = renderLicenseSection(license);
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+  return `# ${title} ${badge}
 
 ## Description
 
@@ -36,11 +51,11 @@ ${description}
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [Contribute](#contribute)
 - [Tests](#tests)
 - [Questions](#questions)
 - [Links](#links)
+${licenseLink}
 
 ## Installation
 
@@ -49,10 +64,6 @@ ${installation}
 ## Usage
 
 ${usage} 
-
-## License
-
-${license} 
 
 ## Contribute
 
@@ -70,6 +81,8 @@ If your project has a lot of features, list them here.
 
 - Here is the repo: 
 - Here is the pages:
+
+${licenseSection}
 `;
 }
 
