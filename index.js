@@ -72,18 +72,18 @@ inquirer
     {
       name: "repoLocation",
       type: "input",
-      message: "Enter the URL for the GitHub repo (include https://www.).",
+      message: "Enter the URL for the GitHub repo (include https://).",
       validate: function (input) {
-        const valid = input.startsWith("https://www.");
+        const valid = input.startsWith("https://");
         return valid || "Please enter a valid website.";
       },
     },
     {
       name: "pagesLocation",
       type: "input",
-      message: "Enter the URL for the GitHub pages (include https://www.).",
+      message: "Enter the URL for the GitHub pages (include https://).",
       validate: function (input) {
-        const valid = input.startsWith("https://www.");
+        const valid = input.startsWith("https://");
         return valid || "Please enter a valid website.";
       },
     },
