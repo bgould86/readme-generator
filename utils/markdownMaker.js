@@ -79,9 +79,9 @@ ${tests}
 
 If you have any questions, please contact:
 
-${contactName}
-${email}
-[https://www.github.com/${github}](https://www.github.com/${github})
+- ${contactName}
+- ${email}
+- [https://www.github.com/${github}](https://www.github.com/${github})
 
 ## Links
 

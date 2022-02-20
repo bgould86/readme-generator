@@ -39,9 +39,9 @@ If Inquirer is not installed, the application will not work.
 
 If you have any questions, please contact:
 
-Brett Gould
-bgould86@gmail.com
-[https://www.github.com/bgould86](https://www.github.com/bgould86)
+- Brett Gould
+- bgould86@gmail.com
+- [https://www.github.com/bgould86](https://www.github.com/bgould86)
 
 ## Links
 
